@@ -1,4 +1,4 @@
-A small tool that splits the contents down into its core components.
+A small tool that splits the contents of a url down into its core components.
 
 ## Requirements
 - [Node](https://nodejs.org/en/)
