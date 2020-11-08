@@ -1,0 +1,10 @@
+.breakdown {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.breakdown h3 {
+    margin: 10px 0 10px 0;
+    line-height: 1em;
+}
