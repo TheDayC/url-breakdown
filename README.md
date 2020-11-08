@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A small tool that splits the contents down into its core components.
 
 ## Requirements
 - [Node](https://nodejs.org/en/)
