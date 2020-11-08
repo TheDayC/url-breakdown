@@ -19,10 +19,6 @@ const App: React.FC = () => {
         } catch (err) {
             setError('Not a valid URL')
         }
-
-        if (value === '') {
-            setError(null);
-        }
     }, []);
 
     return (
@@ -30,7 +26,7 @@ const App: React.FC = () => {
             <div className="wrapper">
                 <p>Please enter a URL...</p>
                 <input name="url" type="text" onKeyUp={onInput} />
-                {savedURL && (
+                {savedURL && !error && (
                     <Breakdown 
                         hash={savedURL.hash || null} 
                         host={savedURL.host || null} 

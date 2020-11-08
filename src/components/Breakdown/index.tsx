@@ -14,7 +14,7 @@ interface IBreakdownProps {
 }
 
 const Breakdown: React.FC<IBreakdownProps> = ({hash, host, hostname, href, origin, pathname, port, protocol, params}) => {
-    const splitParams = params ? params.slice(1).split('&').map(p => ({ property: p.split('=')[0], value: p.split('=')[1]})) : [];
+    const splitParams = params ? params.slice(1).split('&').map(p => ({ property: p.split('=')[0], value: p.split('=')[1]})) : null;
     console.log("splitParams", splitParams)
 
     return (
@@ -28,9 +28,9 @@ const Breakdown: React.FC<IBreakdownProps> = ({hash, host, hostname, href, origi
             {pathname && <p><strong>Pathname:</strong> <code>{pathname}</code></p>}
             {port && <p><strong>Port:</strong> <code>{port}</code></p>}
 
-            <h3>Parameters</h3>
-            {<p><strong>params:</strong> <span>{params}</span></p>}
-            {splitParams.map(p => <p><strong>{p.property}:</strong> <code>{p.value}</code></p>)}
+            {params && <h3>Parameters</h3>}
+            {params && <p><strong>params:</strong> <span>{params}</span></p>}
+            {splitParams && splitParams.map(p => <p><strong>{p.property}:</strong> <code>{p.value}</code></p>)}
         </div>
     );
 }
